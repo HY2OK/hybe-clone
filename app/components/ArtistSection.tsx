@@ -6,7 +6,7 @@ const artistSection = () => {
   return (
     <>
       <header>
-        <h1 className="text-[62px] font-bold tracking-wider uppercase leading-[70px] mb-[21px]">
+        <h1 className="text-[62px] font-bold tracking-wider uppercase leading-[70px] mb-[21px] line-clamp-3">
           <div>we</div>
           <div>believe in</div>
           <div>music</div>
@@ -14,7 +14,7 @@ const artistSection = () => {
       </header>
 
       <main className="relative">
-        <ul className="text-[20px] sticky -top-24 font-semibold ">
+        <ul className="text-[20px] sticky -top-24 ml-5 font-semibold ">
           {MUSICIANS.map(({ name }, index) => (
             <li key={index}>{name}</li>
           ))}

@@ -10,7 +10,7 @@ const InfoSection = () => {
   return (
     <>
       <header>
-        <h1 className="text-[62px] font-bold tracking-wider uppercase leading-[70px]">
+        <h1 className="line-clamp-3 text-[62px] font-bold tracking-wider uppercase leading-[70px]">
           <div>we</div>
           <div>believe in</div>
           <div>music</div>
