@@ -14,7 +14,7 @@ const CompanySection = () => {
 
   useEffect(() => {
     const Ani = async () => {
-      await animate(scope.current.children, { width: '70px', paddingLeft: '50px' })
+      await animate('.companyList', { width: '70px', paddingLeft: '50px' })
       await animate(`.${expandedElement}`, {
         width: 'calc(100% - 140px)',
         paddingLeft: '130px',
@@ -22,7 +22,7 @@ const CompanySection = () => {
     }
 
     Ani()
-  }, [animate, expandedElement, scope])
+  }, [animate, expandedElement])
 
   const handleExpand = async (pathString: string) => {
     if (expandedElement === pathString) return
@@ -45,7 +45,7 @@ const CompanySection = () => {
           onClick={() => handleExpand(pathString)}
           className={`w-[70px] h-[calc(100vh-120px)] border-x border-black overflow-y-scroll font-nanum scrollbar-hide relative overflow-x-hidden mb-[40px] pt-[115px] bg-white relative ${
             expandedElement === pathString ? '' : 'cursor-pointer'
-          } ${pathString} `}
+          } ${pathString} companyList `}
         >
           {ele}
         </motion.div>
