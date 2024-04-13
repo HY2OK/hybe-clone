@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import InfoSection from './InfoSection'
+import ArtistSection from './ArtistSection'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 
@@ -15,7 +16,7 @@ const CompanySection = ({ pathName }: { pathName: string }) => {
 
   const arr = [
     { ele: <InfoSection />, pathString: 'info' },
-    { ele: <InfoSection />, pathString: 'artist' },
+    { ele: <ArtistSection />, pathString: 'artist' },
     { ele: <InfoSection />, pathString: 'business' },
   ]
 
@@ -28,25 +29,26 @@ const CompanySection = ({ pathName }: { pathName: string }) => {
             initial="pageInitial"
             animate="pageAnimate"
             exit="pageExit"
+            custom={pathString}
             variants={{
               pageInitial: {
                 width: '70px',
                 paddingLeft: '50px',
-                transition: { duration: 0.8, ease: 'linear' },
+                transition: { duration: 0.5, ease: 'linear' },
               },
               pageAnimate: {
                 width: expandedElement === pathString ? 'calc(100% - 140px)' : '70px',
                 paddingLeft: expandedElement === pathString ? '130px' : '50px',
-                transition: { duration: 0.8, ease: 'linear' },
+                transition: { duration: 0.5, ease: 'linear' },
               },
               pageExit: {
                 width: '70px',
                 paddingLeft: '50px',
-                transition: { duration: 0.8, ease: 'linear' },
+                transition: { duration: 0.5, ease: 'linear' },
               },
             }}
             onClick={() => handleExpand(pathString)}
-            className={`h-[calc(100vh-120px)] border-x border-black overflow-y-scroll font-nanum scrollbar-hide relative overflow-x-hidden mb-[40px] pt-[115px] bg-white ${
+            className={`h-[calc(100vh-120px)] border-x border-black overflow-y-scroll font-nanum scrollbar-hide relative overflow-x-hidden mb-[40px] pt-[115px] bg-white relative ${
               expandedElement === pathString ? '' : 'cursor-pointer'
             } `}
           >

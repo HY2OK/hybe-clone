@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { LEADER_INFO } from '@/constants/constants'
+import { LEADER_INFO } from '@/constants/leader'
 import { AnimatePresence, motion } from 'framer-motion'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
