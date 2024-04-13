@@ -32,17 +32,17 @@ const CompanySection = ({ pathName }: { pathName: string }) => {
               pageInitial: {
                 width: '70px',
                 paddingLeft: '50px',
-                transition: { duration: 1, ease: 'linear' },
+                transition: { duration: 0.8, ease: 'linear' },
               },
               pageAnimate: {
                 width: expandedElement === pathString ? 'calc(100% - 140px)' : '70px',
                 paddingLeft: expandedElement === pathString ? '130px' : '50px',
-                transition: { duration: 1, ease: 'linear' },
+                transition: { duration: 0.8, ease: 'linear' },
               },
               pageExit: {
                 width: '70px',
                 paddingLeft: '50px',
-                transition: { duration: 1, ease: 'linear' },
+                transition: { duration: 0.8, ease: 'linear' },
               },
             }}
             onClick={() => handleExpand(pathString)}

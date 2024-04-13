@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
 import hybeImg from '@/public/hybe.png'
-import leader1 from '@/public/leader_img01.png'
 import ci1 from '@/public/ci_img01.png'
 import ci2 from '@/public/ci_img02.png'
 import ci3 from '@/public/ci_img03.png'
+import ImageSlider from './ImageSlider'
 
 const InfoSection = () => {
   return (
@@ -24,7 +24,13 @@ const InfoSection = () => {
             who we are
           </div>
           <div className="w-[650px] ml-[260px] mt-[60px]">
-            <Image src={hybeImg} alt="hybe" width={650} height={356.45} />
+            <Image
+              src={hybeImg}
+              alt="hybe"
+              width={650}
+              priority
+              className="aspect-auto"
+            />
             <p className="mt-[30px] text-[17px] font-normal">
               하이브(HYBE)는 “We believe in music”이라는 미션 아래 음악 산업의 비즈니스
               모델을 혁신하는 기업입니다. 하이브는
@@ -42,36 +48,7 @@ const InfoSection = () => {
 
         <section className="w-[910px] h-[817.39px] mt-[200px]">
           <h1 className="text-[13px] uppercase mb-[130px]">leadership</h1>
-          <div>
-            <Image src={leader1} alt="리더1" width={910} height={293.55} />
-            <div className="flex mt-[77px]">
-              <div className="flex-grow">
-                <div className="text-[20px]">방시혁</div>
-                <div className="text-[13px]">의장</div>
-              </div>
-              <div className="w-[650px] text-[18px] font-normal">
-                2005 빅히트 엔터테인먼트 설립
-                <br />
-                2019 Billboard Music’s New Power Generation: 25 Top Innovators 선정
-                <br />
-                2019 Billboard International Power Players 2년 연속 선정
-                <br />
-                2019 Variety International Music Leader 2년 연속 선정
-                <br />
-                2019 The Recording Academy 회원 선정
-                <br />
-                2020 Billboard Power List 선정
-                <br />
-                2020 Billboard Indie Power Players 선정
-                <br />
-                2020 Variety 500 선정
-                <br />
-                2021 Billboard International Power Players 선정
-                <br />
-                2021 Billboard Indie Power Players 선정
-              </div>
-            </div>
-          </div>
+          <ImageSlider />
         </section>
 
         <section className="mt-[200px]">
@@ -87,14 +64,14 @@ const InfoSection = () => {
               <h1 className="absolute top-0 left-0 text-[13px] font-normal uppercase">
                 CI
               </h1>
-              <Image src={ci1} alt="ci1" width={230} height={62.23} />
+              <Image src={ci1} alt="ci1" width={230} priority className="aspect-auto" />
             </div>
             <div className="w-[455px] my-[30px] flex flex-col">
               <div className="ml-[30px] h-1/2 border-b border-black flex justify-center items-center relative">
                 <h1 className="absolute top-0 left-0 text-[13px] font-normal uppercase">
                   SYMBOL
                 </h1>
-                <Image src={ci2} alt="ci2" width={90} height={43.61} />
+                <Image src={ci2} alt="ci2" width={90} priority className="aspect-auto" />
               </div>
               <div className="ml-[30px] h-1/2 flex justify-center items-center relative">
                 <h1 className="absolute top-[30px] left-0 text-[13px] font-normal uppercase">
@@ -104,8 +81,8 @@ const InfoSection = () => {
                   src={ci3}
                   alt="ci3"
                   width={149}
-                  height={29.05}
-                  className="mt-[30px]"
+                  priority
+                  className="mt-[30px] aspect-auto"
                 />
               </div>
             </div>
