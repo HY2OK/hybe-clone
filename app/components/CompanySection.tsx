@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import InfoSection from './InfoSection'
 import ArtistSection from './ArtistSection'
+import BusinessSection from './BusinessSection'
 import { motion, useAnimate } from 'framer-motion'
 import { useRouter, useSearchParams } from 'next/navigation'
 
@@ -34,7 +35,7 @@ const CompanySection = () => {
   const arr = [
     { ele: <InfoSection />, pathString: 'info' },
     { ele: <ArtistSection />, pathString: 'artist' },
-    { ele: <InfoSection />, pathString: 'business' },
+    { ele: <BusinessSection />, pathString: 'business' },
   ]
 
   return (
