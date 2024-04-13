@@ -1,10 +1,10 @@
 import CompanySection from '@/app/components/CompanySection'
 import React from 'react'
 
-const page = ({ params }: { params: { slug: string } }) => {
+const page = () => {
   return (
     <div className="relative w-full h-full">
-      <CompanySection pathName={params.slug} />
+      <CompanySection />
     </div>
   )
 }

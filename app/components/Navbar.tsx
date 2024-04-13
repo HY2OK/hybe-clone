@@ -9,7 +9,7 @@ const Navbar = () => {
       </div>
       <ul className="flex gap-10 justify-center items-center text-[20px] ">
         <li>
-          <Link href={`/kor/company/info`}>COMPANY</Link>
+          <Link href={`/kor/company?path=info`}>COMPANY</Link>
         </li>
         <li className="text-black/30">
           <Link href={`#`}>INVESTORS</Link>

@@ -1,17 +1,34 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import InfoSection from './InfoSection'
 import ArtistSection from './ArtistSection'
-import { AnimatePresence, motion } from 'framer-motion'
-import { useRouter } from 'next/navigation'
+import { motion, useAnimate } from 'framer-motion'
+import { useRouter, useSearchParams } from 'next/navigation'
 
-const CompanySection = ({ pathName }: { pathName: string }) => {
+const CompanySection = () => {
   const router = useRouter()
-  const [expandedElement, setExpandedElement] = useState<string>(pathName)
+  const searchParams = useSearchParams().get('path')!
+  const [scope, animate] = useAnimate()
 
-  const handleExpand = (pathString: string) => {
-    setExpandedElement(pathString === expandedElement ? pathName : pathString)
-    router.push(`/kor/company/${pathString}`)
+  const [expandedElement, setExpandedElement] = useState<string>(searchParams)
+
+  useEffect(() => {
+    const Ani = async () => {
+      await animate(scope.current.children, { width: '70px', paddingLeft: '50px' })
+      await animate(`.${expandedElement}`, {
+        width: 'calc(100% - 140px)',
+        paddingLeft: '130px',
+      })
+    }
+
+    Ani()
+  }, [animate, expandedElement, scope])
+
+  const handleExpand = async (pathString: string) => {
+    if (expandedElement === pathString) return
+
+    setExpandedElement(pathString === expandedElement ? searchParams : pathString)
+    router.push(`/kor/company?path=${pathString}`)
   }
 
   const arr = [
@@ -21,42 +38,19 @@ const CompanySection = ({ pathName }: { pathName: string }) => {
   ]
 
   return (
-    <AnimatePresence mode="wait">
-      <div className="flex justify-end items-center px-[30px]">
-        {arr.map(({ ele, pathString }, index) => (
-          <motion.div
-            key={pathString}
-            initial="pageInitial"
-            animate="pageAnimate"
-            exit="pageExit"
-            custom={pathString}
-            variants={{
-              pageInitial: {
-                width: '70px',
-                paddingLeft: '50px',
-                transition: { duration: 0.5, ease: 'linear' },
-              },
-              pageAnimate: {
-                width: expandedElement === pathString ? 'calc(100% - 140px)' : '70px',
-                paddingLeft: expandedElement === pathString ? '130px' : '50px',
-                transition: { duration: 0.5, ease: 'linear' },
-              },
-              pageExit: {
-                width: '70px',
-                paddingLeft: '50px',
-                transition: { duration: 0.5, ease: 'linear' },
-              },
-            }}
-            onClick={() => handleExpand(pathString)}
-            className={`h-[calc(100vh-120px)] border-x border-black overflow-y-scroll font-nanum scrollbar-hide relative overflow-x-hidden mb-[40px] pt-[115px] bg-white relative ${
-              expandedElement === pathString ? '' : 'cursor-pointer'
-            } `}
-          >
-            {ele}
-          </motion.div>
-        ))}
-      </div>
-    </AnimatePresence>
+    <div ref={scope} className="flex justify-end items-center px-[30px]">
+      {arr.map(({ ele, pathString }, index) => (
+        <motion.div
+          key={index}
+          onClick={() => handleExpand(pathString)}
+          className={`w-[70px] h-[calc(100vh-120px)] border-x border-black overflow-y-scroll font-nanum scrollbar-hide relative overflow-x-hidden mb-[40px] pt-[115px] bg-white relative ${
+            expandedElement === pathString ? '' : 'cursor-pointer'
+          } ${pathString} `}
+        >
+          {ele}
+        </motion.div>
+      ))}
+    </div>
   )
 }
 
