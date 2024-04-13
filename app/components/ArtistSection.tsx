@@ -1,6 +1,6 @@
 import { MUSICIANS } from '@/constants/musician'
-import Image from 'next/image'
 import React from 'react'
+import ArtistImages from './ArtistImages'
 
 const artistSection = () => {
   return (
@@ -22,15 +22,7 @@ const artistSection = () => {
 
         <div className="w-full flex flex-col gap-[80px] -mt-[550px]">
           {MUSICIANS.map(({ image, name, space }, index) => (
-            <div key={index}>
-              <Image
-                src={image}
-                alt={name}
-                width={325}
-                className="aspect-auto"
-                style={{ marginLeft: `${space}px` }}
-              />
-            </div>
+            <ArtistImages key={index} image={image} name={name} space={space} />
           ))}
         </div>
       </main>
