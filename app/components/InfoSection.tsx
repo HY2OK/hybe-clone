@@ -6,7 +6,7 @@ import ci2 from '@/public/ci_img02.png'
 import ci3 from '@/public/ci_img03.png'
 import ImageSlider from './ImageSlider'
 
-const InfoSection = () => {
+const InfoSection = async () => {
   return (
     <>
       <header>

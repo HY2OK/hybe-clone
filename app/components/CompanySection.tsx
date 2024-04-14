@@ -6,7 +6,7 @@ import BusinessSection from './BusinessSection'
 import { motion, useAnimate } from 'framer-motion'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-const CompanySection = () => {
+const CompanySection = ({ children }: React.PropsWithChildren) => {
   const router = useRouter()
   const searchParams = useSearchParams().get('path')!
   const [scope, animate] = useAnimate()
@@ -48,7 +48,7 @@ const CompanySection = () => {
             expandedElement === pathString ? '' : 'cursor-pointer'
           } ${pathString} companyList `}
         >
-          {ele}
+          {children}
         </motion.div>
       ))}
     </div>

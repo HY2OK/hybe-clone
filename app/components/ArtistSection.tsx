@@ -2,7 +2,7 @@ import { MUSICIANS } from '@/constants/musician'
 import React from 'react'
 import ArtistImages from './ArtistImages'
 
-const artistSection = () => {
+const ArtistSection = () => {
   return (
     <>
       <header>
@@ -39,4 +39,4 @@ const artistSection = () => {
   )
 }
 
-export default artistSection
+export default ArtistSection

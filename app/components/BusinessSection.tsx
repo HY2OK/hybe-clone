@@ -1,14 +1,24 @@
 import Image from 'next/image'
 import React from 'react'
 import about_company3_img from '@/public/about_company3_img.png'
-import {
-  BUSINESS_LABELS,
-  BUSINESS_PLATFORMS,
-  BUSINESS_SOLUTIONS,
-} from '@/constants/business'
 import BusinessCard from './BusinessCard'
+import { PrismaClient } from '@prisma/client'
 
-const businessSection = () => {
+const getData = async (model: string) => {
+  const prisma = new PrismaClient()
+  const data = await prisma.business.findMany({
+    where: {
+      model: model,
+    },
+  })
+  return data
+}
+
+const BusinessSection = async () => {
+  const labelData = await getData('label')
+  const solutionData = await getData('solution')
+  const platformData = await getData('platform')
+
   return (
     <>
       <header>
@@ -45,7 +55,7 @@ const businessSection = () => {
             </div>
           </div>
           <div className="flex-1">
-            {BUSINESS_LABELS.map(({ title, description }, index) => (
+            {labelData.map(({ title, description }, index) => (
               <BusinessCard title={title} description={description} key={index} />
             ))}
           </div>
@@ -63,7 +73,7 @@ const businessSection = () => {
             </div>
           </div>
           <div className="flex-1">
-            {BUSINESS_SOLUTIONS.map(({ title, description }, index) => (
+            {solutionData.map(({ title, description }, index) => (
               <BusinessCard title={title} description={description} key={index} />
             ))}
           </div>
@@ -78,7 +88,7 @@ const businessSection = () => {
             </div>
           </div>
           <div className="flex-1">
-            {BUSINESS_PLATFORMS.map(({ title, description }, index) => (
+            {platformData.map(({ title, description }, index) => (
               <BusinessCard title={title} description={description} key={index} />
             ))}
           </div>
@@ -96,4 +106,4 @@ const businessSection = () => {
   )
 }
 
-export default businessSection
+export default BusinessSection
