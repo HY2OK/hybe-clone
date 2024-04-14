@@ -31,7 +31,7 @@ const InfoSection = () => {
               priority
               className="aspect-auto"
             />
-            <p className="mt-[30px] text-[17px] font-normal">
+            <div className="mt-[30px] text-[17px] font-normal">
               하이브(HYBE)는 “We believe in music”이라는 미션 아래 음악 산업의 비즈니스
               모델을 혁신하는 기업입니다. 하이브는
               <span className="font-bold">
@@ -42,7 +42,7 @@ const InfoSection = () => {
               글로벌 트렌드를 이끄는 &rsquo;콘텐츠&rsquo;와 우리의 고객인
               &rsquo;팬&rsquo;을 최우선 가치로 두고, 높은 기준과 끊임없는 개선으로 고객을
               만족시키도록 노력하고 있습니다.
-            </p>
+            </div>
           </div>
         </section>
 
@@ -53,11 +53,11 @@ const InfoSection = () => {
 
         <section className="mt-[200px]">
           <h1 className="text-[38px] font-bold">CI</h1>
-          <p className="mt-[60px] ml-[455px] mb-[50px] font-normal">
+          <div className="mt-[60px] ml-[455px] mb-[50px] font-normal">
             HYBE CI에는 HYBE의 기반인 음악을 담았습니다. <br /> 오선보가 압축된 형태인
             가로선은 악보에서 세로줄을 상징하는 두 개의 바를 연결하고 유연함을 기반으로
             다양하게 변주, 확장합니다.
-          </p>
+          </div>
 
           <div className="w-[910px] h-[381px] border-y border-black flex">
             <div className="w-[455px] my-[30px] border-r border-black flex justify-center items-center relative">
