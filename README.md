@@ -13,6 +13,7 @@ COMPANY 페이지 클론 및 기존 HYBE 페이지의 화면 애니메이션 효
 
 <hr/>
 (기존)
+![1](https://github.com/HY2OK/hybe-clone/assets/27201254/85f59840-81c0-46a9-a49d-3fc55c1b829f)
 <img src="![1](https://github.com/HY2OK/hybe-clone/assets/27201254/85f59840-81c0-46a9-a49d-3fc55c1b829f)" />
 (개선)
 <img src="![2](https://github.com/HY2OK/hybe-clone/assets/27201254/93c336db-a0f7-4636-9aab-6f506a6d48eb)" />
