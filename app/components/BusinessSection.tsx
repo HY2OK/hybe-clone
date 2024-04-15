@@ -2,10 +2,9 @@ import Image from 'next/image'
 import React from 'react'
 import about_company3_img from '@/public/about_company3_img.png'
 import BusinessCard from './BusinessCard'
-import { PrismaClient } from '@prisma/client'
+import prisma from '@/utils/db'
 
 const getData = async (model: string) => {
-  const prisma = new PrismaClient()
   const data = await prisma.business.findMany({
     where: {
       model: model,

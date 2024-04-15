@@ -2,9 +2,9 @@ import { MUSICIANS } from '@/constants/musician'
 import React from 'react'
 import ArtistImages from './ArtistImages'
 import { PrismaClient } from '@prisma/client'
+import prisma from '@/utils/db'
 
 const getData = async () => {
-  const prisma = new PrismaClient()
   const data = await prisma.musician.findMany({})
   return data
 }
