@@ -13,16 +13,15 @@ COMPANY 페이지 클론 및 기존 HYBE 페이지의 화면 애니메이션 효
 
 <hr/>
 (기존)
-![1](https://github.com/HY2OK/hybe-clone/assets/27201254/85f59840-81c0-46a9-a49d-3fc55c1b829f)
-<img src="![1](https://github.com/HY2OK/hybe-clone/assets/27201254/85f59840-81c0-46a9-a49d-3fc55c1b829f)" />
+<img width="50%" src="![1](https://github.com/HY2OK/hybe-clone/assets/27201254/85f59840-81c0-46a9-a49d-3fc55c1b829f)" />
 (개선)
-<img src="![2](https://github.com/HY2OK/hybe-clone/assets/27201254/93c336db-a0f7-4636-9aab-6f506a6d48eb)" />
+<img width="50%" src="![2](https://github.com/HY2OK/hybe-clone/assets/27201254/93c336db-a0f7-4636-9aab-6f506a6d48eb)" />
   
 #### 기존의 화면의 스크롤 애니메이션 개선
 
 <hr/>
 (기존)
-<img src="![3](https://github.com/HY2OK/hybe-clone/assets/27201254/dfe658d7-694b-4826-8be0-dc222be8c2c8)" />
+<img width="50%" src="![3](https://github.com/HY2OK/hybe-clone/assets/27201254/dfe658d7-694b-4826-8be0-dc222be8c2c8)" />
 (개선)
-<img src="![5](https://github.com/HY2OK/hybe-clone/assets/27201254/225d2935-e828-42f1-bb2e-d84be2fc2777)" />
+<img width="50%" src="![5](https://github.com/HY2OK/hybe-clone/assets/27201254/225d2935-e828-42f1-bb2e-d84be2fc2777)" />
 
