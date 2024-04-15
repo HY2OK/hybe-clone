@@ -1,8 +1,17 @@
 import { MUSICIANS } from '@/constants/musician'
 import React from 'react'
 import ArtistImages from './ArtistImages'
+import { PrismaClient } from '@prisma/client'
 
-const ArtistSection = () => {
+const getData = async () => {
+  const prisma = new PrismaClient()
+  const data = await prisma.musician.findMany({})
+  return data
+}
+
+const ArtistSection = async () => {
+  const musicianData = await getData()
+
   return (
     <>
       <header>
@@ -21,7 +30,7 @@ const ArtistSection = () => {
         </ul>
 
         <div className="w-full flex flex-col gap-[80px] -mt-[550px]">
-          {MUSICIANS.map(({ image, name, space }, index) => (
+          {musicianData.map(({ image, name, space }, index) => (
             <ArtistImages key={index} image={image} name={name} space={space} />
           ))}
         </div>

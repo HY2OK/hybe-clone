@@ -10,9 +10,9 @@ const ArtistImages = ({
   name,
   space,
 }: {
-  image: StaticImageData
-  name: string
-  space: number
+  image: string | null
+  name: string | null
+  space: number | null
 }) => {
   const [isHovered, setIsHovered] = useState(false)
   const animate = useAnimation()
@@ -41,7 +41,14 @@ const ArtistImages = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Image src={image} alt={name} width={325} className="aspect-auto" priority />
+        <Image
+          src={`${image!}`}
+          alt={name!}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }}
+        />
         {isHovered && (
           <motion.div
             initial={{ opacity: 0 }}
