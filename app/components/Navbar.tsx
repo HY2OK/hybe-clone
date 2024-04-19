@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import React from 'react';
 
 const Navbar = () => {
   return (
@@ -23,7 +23,7 @@ const Navbar = () => {
       </ul>
       <div className="text-[13px] underline">KOR</div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

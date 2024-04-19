@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import React from 'react'
-import hybeImg from '@/public/hybe.png'
-import ci1 from '@/public/ci_img01.png'
-import ci2 from '@/public/ci_img02.png'
-import ci3 from '@/public/ci_img03.png'
-import ImageSlider from './ImageSlider'
+import Image from 'next/image';
+import React from 'react';
+import hybeImg from '@/public/hybe.png';
+import ci1 from '@/public/ci_img01.png';
+import ci2 from '@/public/ci_img02.png';
+import ci3 from '@/public/ci_img03.png';
+import ImageSlider from './ImageSlider';
 
 const InfoSection = async () => {
   return (
@@ -120,7 +120,7 @@ const InfoSection = async () => {
         </div>
       </footer>
     </>
-  )
-}
+  );
+};
 
-export default InfoSection
+export default InfoSection;
